@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Example</title>
+</head>
+<body>
+
+<h1>Lista delle persone</h1>
+
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Età</th>
+    </tr>
+    <tr th:each="person : ${people}">
+        <td th:text="${person.name}"></td>
+        <td th:text="${person.age}"></td>
+        <td><a th:href="@{'/menu-freetto/'+${person.age}}">Modifica</a></td>
+    </tr>
+</table>
+
+</body>
+</html>
