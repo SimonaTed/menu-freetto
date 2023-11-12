@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Menù</title>
+</head>
+
+<style>
+	h1{
+		font-size: 35px;
+		color: black;
+		border-bottom: 0%;
+		margin-bottom: 0%;
+	}
+	.span1{
+		font-size: 50px;
+		color: green;
+	}
+	.liberi{
+		margin: 0%;
+		border: 0%;
+		margin-left: 13%;
+	}
+	hr{
+		color: green;
+		width: 85%;
+		box-align: center;
+	}
+	.sottotitolo{
+		color: black;
+		font-weight: bold;
+	}
+	
+</style>
+
+<body style="text-align:center;">
+	<div>
+		<h1>WELCOME TO <span class="span1">FREE</span>tto</h1>
+		<p class="liberi">LIBERI DI MANGIARE</p>
+		<hr/>
+	</div>
+	<p class="sottotitolo">- COFFEE BAR - SALAD - SANDWICH - FRUIT EXTRACTS - FINE FRIED FOOD -</p>
+	
+	<table border="1" align="center">
+		<tr>
+			<th>Nome Piatto</th>
+			<th>Ingredienti</th>
+			<th>Prezzi</th>
+		</tr>
+		<tr th:each="piatto : ${piatti}">
+			<td th:text="${piatto.nomePiatto}"></td>
+			<td th:text="${piatto.ingredienti}"></td>
+			<td th:text="${piatto.prezzo} + ${piatto.prezzoDue}"></td>
+		</tr>
+	</table>
+	
+	
+	
+
+
+
+</body>
+
+</html>

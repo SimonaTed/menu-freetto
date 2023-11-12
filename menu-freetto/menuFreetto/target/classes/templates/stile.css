@@ -1,0 +1,26 @@
+header {
+	text-align:center;
+	color: white;
+	font-size: 5px;
+	font-family: Lucida Console, Courier New, monospace;
+}
+
+img {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	cursor: pointer;
+	box-shadow:  5px  5px 5px rgb(221, 220, 220),
+				-5px -5px 5px rgb(221, 220, 220),
+				 5px -5px 5px rgb(221, 220, 220),
+				-5px  5px 5px rgb(221, 220, 220);
+  }
+  .grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	gap: 40px;
+	align-items: centerw;
+  }
+  .grid-item {
+	text-align: center;
+  }
