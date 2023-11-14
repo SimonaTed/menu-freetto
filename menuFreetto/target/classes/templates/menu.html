@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Menù</title>
+	<link rel="stylesheet" th:href="@{../style.css}" />
+</head>
+
+<body class="bodyMenu">
+	<div class="container">
+		<div style="color: white;">
+			<h1 class="headerMenu"><span class="span1Menu">FREE</span>tto</h1>
+			<p class="liberiMenu">LIBERI DI MANGIARE</p>
+			<hr />
+		</div>
+		<br>
+		<h1 style="font-size: 35px;" class="titoloMenu">MENU</h1>
+		<div>
+			<br>
+			<br>
+			<div class="grid-container">
+
+				<div class="grid-item" th:each="lingua : ${lingue}">
+					<a th:href="@{'/menu-freetto/' + ${lingua.nome}}">
+						<img class="imgMenu" th:src="@{${lingua.url}}" th:alt="${lingua.nome}" width="50px" height="35px"></a>
+				</div>
+			</div>
+		</div>
+</body>
+
+
+<script>
+
+
+</script>
+
+</html>
