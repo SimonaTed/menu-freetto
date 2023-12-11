@@ -46,7 +46,9 @@ public class MenuServiceImpl implements MenuService {
 		return (List<MenuEntity>) menuRepository.findAllByLingua(lingua);
 	}
 
-
-	
+	@Override
+	public List<StrutturaEntity> findStrutturaEntityByLingua(String lingua) {
+		return (List<StrutturaEntity>) strutturaRepository.findStrutturaEntitiesByMenu_Lingua(lingua);
+	}
 	
 }

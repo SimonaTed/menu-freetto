@@ -1,9 +1,6 @@
 package it.menuFretto.service;
 
-import java.awt.Menu;
 import java.util.List;
-
-import org.springframework.http.ResponseEntity;
 
 import it.menuFretto.entity.MenuEntity;
 import it.menuFretto.entity.StrutturaEntity;
@@ -17,6 +14,8 @@ public interface MenuService {
 	
 	public List<MenuEntity> tuttiPiatti();
 	
-	public List<MenuEntity> findByLingua(String lingua);
-
+	public List<MenuEntity> findByLingua(String lingua); 
+	
+	public List<StrutturaEntity> findStrutturaEntityByLingua(String lingua);
+	
 }

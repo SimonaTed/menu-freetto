@@ -5,6 +5,9 @@ public class Lingue {
 	String nome;
 	String url;
 	String sottotitolo;
+	String benvenuto;
+	String avvertenze;
+	String allergeni;
 	
 	
 	
@@ -23,6 +26,24 @@ public class Lingue {
 		this.nome = nome;
 		this.url = url;
 		this.sottotitolo = sottotitolo;
+	}
+
+	public Lingue(String nome, String url, String sottotitolo, String benvenuto) {
+		super();
+		this.nome = nome;
+		this.url = url;
+		this.sottotitolo = sottotitolo;
+		this.benvenuto = benvenuto;
+	}
+
+	public Lingue(String nome, String url, String sottotitolo, String benvenuto, String avvertenze, String allergeni) {
+		super();
+		this.nome = nome;
+		this.url = url;
+		this.sottotitolo = sottotitolo;
+		this.benvenuto = benvenuto;
+		this.avvertenze = avvertenze;
+		this.allergeni = allergeni;
 	}
 
 	public String getNome() {
@@ -45,8 +66,31 @@ public class Lingue {
 	public void setSottotitolo(String sottotitolo) {
 		this.sottotitolo = sottotitolo;
 	}
-	
-	
-	
 
+	public String getBenvenuto() {
+		return benvenuto;
+	}
+
+	public void setBenvenuto(String benvenuto) {
+		this.benvenuto = benvenuto;
+	}
+
+	public String getAvvertenze() {
+		return avvertenze;
+	}
+
+	public String getAllergeni() {
+		return allergeni;
+	}
+
+	public void setAvvertenze(String avvertenze) {
+		this.avvertenze = avvertenze;
+	}
+
+	public void setAllergeni(String allergeni) {
+		this.allergeni = allergeni;
+	}
+	
+	
+	
 }
