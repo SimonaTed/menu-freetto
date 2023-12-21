@@ -4,6 +4,13 @@
 	overflow: auto;
 }
 
+.bodyLingua{
+	background-image: radial-gradient(circle at 50% -20.71%, #ffffcf 0, #ffffca 8.33%, #f8ffc5 16.67%, #eafec0 25%, #dafabc 33.33%, #c9f6b8 41.67%, #b5f2b5 50%, #a0edb4 58.33%, #8ae9b5 66.67%, #71e5b8 75%, #56e2bd 83.33%, #2fdec3 91.67%, #00dbcb 100%);
+	background-attachment: fixed; /* Fissa il background */
+    background-size: cover; /* Adatta il gradiente al dimensionamento del body */
+}
+	
+
 .headerMenu {
 	text-align: center;
 	color: white;
@@ -39,13 +46,14 @@
 .grid-container-lingua {
 	display: grid;
 	grid-template-columns: 50% 50%;
-	gap: 0px;
+	gap: 50px;
 	align-items: center;
 }
 
 .grid-item-lingua {
 	display: flex;
     justify-content: center;
+    	padding: 10px;
 }
 
 .titoloMenu {
@@ -84,11 +92,13 @@
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border-color: green;
+	background-color: green;
 }
 
 .sottotitolo {
 	color: black;
 	font-weight: bold;
+	text-align: center;
 }
 
 .header-content {
@@ -101,6 +111,7 @@ footer{
 	color: green;
 	font-weight: bold;
 	margin-top: 20px;
+	text-align: center;
 }
 
 .containerMenu {
@@ -115,6 +126,23 @@ footer{
     border-left: 2px solid green; /* Larghezza e colore della linea */
     height: 100px; /* Altezza della linea */
 }
+
+.h2Menu{
+	font-family: "Lucida Handwriting", cursive;
+	text-align: center;
+}
+
+.nomePiatto{
+	font-family: Consolas;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.ingredienti{
+	font-family: Georgia;
+	font-size: 13px;
+}
+
 
 
 
@@ -132,6 +160,10 @@ footer{
 		height: 100px;
 		margin-bottom: 30px;
 		margin-top: 30px;
+	}
+	
+	.grid-container-lingua{
+		grid-template-columns: 100%;
 	}
 }
 
@@ -151,4 +183,9 @@ footer{
 		margin-bottom: 10px;
 		margin-top: 10px;
 	}
+	
+	.grid-container-lingua{
+		grid-template-columns: 100%;
+	}
+	
 }

@@ -1,45 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Menù</title>
 	<link rel="stylesheet" th:href="@{../style.css}" />
+	<link rel="stylesheet" th:href="@{../bootstrap/css/bootstrap.min.css}">
 </head>
 
-<header>
-	<div th:object="${linguaCercata}" style="margin-top: 50px;">
-		<div class="header-content">
-			<h1 class="titoloLingua" th:text="*{benvenuto}"></h1>
-			<img class="logo" th:src="@{../logo-fretto.png}" th:alt="FREEtto" height="10%" width="15%"
-				style="margin-left: 10px;">
-		</div>
-		<hr class="lineaLingua" />
-		<p class="sottotitolo"><span th:text="*{sottotitolo}"></span></p>
-	</div>
-</header>
+<body style="text-align:center;" class="bodyLingua">
 
-<body style="text-align:center;">
+	<header>
+		<div th:object="${linguaCercata}" style="margin-top: 50px;">
+			<div class="header-content">
+				<h1 class="titoloLingua" th:text="*{benvenuto}"></h1>
+				<img class="logo" th:src="@{../images/logo-fretto.png}" th:alt="FREEtto" height="10%" width="15%" style="margin-left: 10px;">
+			</div>
+			<hr class="lineaLingua" />
+			<p class="sottotitolo"><span th:text="*{sottotitolo}"></span></p>
+		</div>
+	</header>
+
 	<div class="container">
 		<div class="grid-container-lingua">
-			<div class="grid-item-lingua" th:each="sezione : ${sezioni}"> 
-				<div class="colonna">
-					<h2 th:text="${sezione.sottoSezione}"></h2>
+			<div class="grid-item-lingua" th:each="sezione : ${sezioni}">
+				<div>
 					<table>
+						<h2 class="h2Menu" th:text="${sezione.sottoSezione}"></h2>
 						<thead style="text-align:center;">
-							<tr>
-							</tr>
+
 						</thead>
-						<br/>
 						<tbody style="text-align:center;">
-							<tr th:each="piatto : ${sezione.menu}">
-								<td th:text="${piatto.prezzo}" />
-								<td th:text="${piatto.prezzoDue}"/>
+							<!-- Ciclo per ogni piatto nella sezione del menu -->
+							<tr th:each="piatto : ${sezione.menu}" style="text-align:center;">
 								<td>
-    								<span th:text="${piatto.nomePiatto}"></span><br/>
-    								<span th:text="${piatto.ingredienti}"></span>
+									<a href="#" th:attr="data-toggle='modal', data-target='#modalPiatti'"
+										th:text="${piatto.nomePiatto}"> </a>
+									<br />
+									<span class="ingredienti" th:text="${piatto.ingredienti}"></span>
 								</td>
+								<td></td>
+								<td th:text="${piatto.prezzo}"></td>
+								<td></td>
+								<td th:text="${piatto.prezzoDue}"></td>
 							</tr>
 						</tbody>
 					</table>
@@ -47,15 +51,41 @@
 			</div>
 		</div>
 	</div>
-</body>
 
-	
-
-<footer>
-	<div th:object="${linguaCercata}">
-		<p><span th:text="*{avvertenze}"></p>
-		<p><span th:text="*{allergeni}"></p>
+	<div class="modal fade" id="modalPiatti" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<img th:src="@{../images/piatti/suppli.jpeg}" th:alt="Supplì" style="width: 70%; height: 70%; margin-left: 15%;">
+				</div>
+			</div>
+		</div>
 	</div>
-</footer>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		$(document).ready(function () {
+		});
+
+		$(document).on('click', '[data-toggle="modal"]', function (e) {
+			e.preventDefault();
+			var targetModal = $(this).attr('data-target');
+			var modal = new bootstrap.Modal(document.querySelector(targetModal));
+			modal.show();
+		});
+
+
+	</script>
+
+	<footer>
+		<div th:object="${linguaCercata}">
+			<p><span th:text="*{avvertenze}"></p>
+			<p><span th:text="*{allergeni}"></p>
+		</div>
+	</footer>
+
+</body>
 
 </html>
